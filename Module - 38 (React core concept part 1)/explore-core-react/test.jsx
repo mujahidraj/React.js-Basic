@@ -37,3 +37,12 @@ for state masnagement use redux , recoil or context api
 5 . they return jsx markup 
 
 */
+
+/*
+advantages of using the component  :
+
+1 . reusibity 
+2 . fast development
+3 . design consistency 
+4 . maintainability  
+*/
