@@ -83,4 +83,10 @@ we can use the name of the property of the props object from where we called thi
 
 and then we can use the props as a parameter and then use the props inside a curly bracket like calling a property of a object . like name : {props.name}
 
+use the props to communicate with each other 
+we can pass any js value through the props including the objects, arrays , function , and component too .
+
+props are unidirectional 
+thats mean props can be send by the parent component to the child component but not from the child component to the parent component 
+
 */

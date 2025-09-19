@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       
-      
+      <Student></Student>
       <Person name="Raj"></Person>
       <Person name="Mayad"></Person>
       <Person name="fidbi"></Person>
@@ -17,6 +17,21 @@ function App() {
     </>
   )
 }
+
+const {name , grade} = {name :"Raina" , grade : 5}
+
+function Student (){
+  return (
+    <div>
+      <h3>Name : {name}</h3>
+      <p>Grade : {grade}</p>
+    </div>
+  )
+}
+
+
+
+
 
 function Person (props){
   let name = "Moizuddin Mohammad Mujahid Rashid"
