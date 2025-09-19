@@ -46,3 +46,18 @@ advantages of using the component  :
 3 . design consistency 
 4 . maintainability  
 */
+
+/*
+
+JSX :
+
+1 . JSX stand for javascript xml 
+2 . babel or typescript 
+3 . return a single root element 
+4 . to return multiple element we have to put those element in a single parent element 
+5 . if we want to return multiple element we have to use the empty tag or fragment
+6 . have to use all the cloosing tag 
+7 . must have to use the camelCase 
+8 . use of curly bracket and double curly bracket 
+
+*/
