@@ -61,3 +61,26 @@ JSX :
 8 . use of curly bracket and double curly bracket 
 
 */
+
+/*
+
+to style a conponent :
+
+1 . we can write a class in the app.css
+2 . we can make a object and then we can place it in the style tag with the curly bracket 
+3 . to use multiword property we have to use the camel case instead of hiphen . 
+4 . we have to use the className instead of class because class is a redeifne reserve keyword of javascript . thats why we have to use the className insteaf of the class keyword .
+5 . we can write the class name In the className keyword 
+6 . if we create object then wer can write the object name in the style in the curly bracket 
+7 . again we can write the styling code inside the style tag as a object inside the double curly bracket 
+
+*/
+
+/*
+
+to get the dynamic data we can use the props . props contain the object . 
+we can use the name of the property of the props object from where we called this . like we we call the profile function and there is a element for the name  . we can simply use the <Profile name="name"></Profile>
+
+and then we can use the props as a parameter and then use the props inside a curly bracket like calling a property of a object . like name : {props.name}
+
+*/
