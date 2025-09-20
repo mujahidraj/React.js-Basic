@@ -1,5 +1,6 @@
 
 import './App.css'
+import ToDo from './ToDo'
 
 function App() {
   
@@ -15,6 +16,14 @@ function App() {
       <Cat></Cat> */}
 
       {/* <Laptop brand = "HP"  model = "G7 845" price = "62000"></Laptop> */}
+
+        <ToDo task = "Kapor Kacha" isDone={false} duration = "20 min" ></ToDo>
+        <ToDo task = "Gosol" isDone={false} duration = "15 min" ></ToDo>
+        <ToDo task = "Nasta" isDone={true} duration = "20 min" ></ToDo>
+        <ToDo task = "Cha" isDone={true} duration = "10 min" ></ToDo>
+        <ToDo task = "Ghumano" isDone={false} duration = "2 hr" ></ToDo>
+
+
      
     </>
   )
