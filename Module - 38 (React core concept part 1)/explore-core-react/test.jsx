@@ -90,3 +90,36 @@ props are unidirectional
 thats mean props can be send by the parent component to the child component but not from the child component to the parent component 
 
 */
+
+/*
+
+conditional rendering is a process od displaying differnet content base on certain condition .
+1 . improve user experience 
+2 . improve performance 
+3 . simplified code
+4 . flexibility
+
+
+we can do ...
+1 . if statement 
+2 . and oparator &&
+3 . ternary opearator ?
+4 . or oparator 
+
+
+
+
+*/
+
+/*
+
+component is a small unit of a website just a jsx function 
+
+jsx  is a html like javascript 
+
+conditional rendering is 6 typehow to loop through and array and show component 
+
+props is a destruvtring 
+
+
+*/
