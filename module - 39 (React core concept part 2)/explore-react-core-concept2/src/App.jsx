@@ -1,4 +1,6 @@
 import './App.css'
+// we simply import the exported function from the counter.jsx file . and set a name called setCounter 
+import SetCounter from './counter'
 
 function App() {
 
@@ -17,7 +19,7 @@ function App() {
   return (
 
     <>
-      
+      <SetCounter></SetCounter>
       <h1>Vite + React</h1>
       {/* creating button  */}
     <button onClick={handleClick}>
