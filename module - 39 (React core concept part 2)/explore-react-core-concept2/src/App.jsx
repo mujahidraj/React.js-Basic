@@ -4,6 +4,7 @@ import Batsmen from './Batsmen'
 // we simply import the exported function from the counter.jsx file . and set a name called setCounter 
 import SetCounter from './counter'
 import Users from './User'
+import Todos from './Todos'
 
 
 
@@ -14,9 +15,15 @@ const userDetails = async() =>
   return res.json();
 }
 
+const TodoList = async () =>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+  return res.json();
+}
+
 function App() {
   // callign the function where the api is called 
   const detailed = userDetails();
+  const todo = TodoList();
 
   function handleClick (){
     alert("Moizuddin Mohammad Mujahid Rashid")
@@ -37,6 +44,11 @@ function App() {
     <Suspense fallback={<h1>Users are loading please wait for a while .....</h1>}>
       {/* user will get the data from the called variable . which is declared first with the detailed function which hold the api  */}
       <Users detailed = {detailed}></Users>
+    </Suspense>
+
+
+    <Suspense fallback={<h2>Todo List is wating ....</h2>}>
+    <Todos list={todo}></Todos>
     </Suspense>
 
 

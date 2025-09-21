@@ -1,5 +1,5 @@
     export default function UserInfo({users}){
-        console.log(users);
+        
         
     return(
         <div>

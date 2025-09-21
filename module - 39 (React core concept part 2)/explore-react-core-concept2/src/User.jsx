@@ -4,7 +4,7 @@ import UserInfo from "./UserInfo";
 
 export default function Users ({detailed}){
 const details = use (detailed);
-console.log(details);
+
 
     return (
         <div>
