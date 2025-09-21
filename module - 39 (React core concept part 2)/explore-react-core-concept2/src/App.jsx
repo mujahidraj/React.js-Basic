@@ -6,6 +6,7 @@ import SetCounter from './counter'
 import Users from './User'
 import Todos from './Todos'
 import Special from './useState'
+import ToggleMessage from './toggleTrue'
 
 
 
@@ -43,6 +44,8 @@ function App() {
   return (
 
     <>
+
+    <ToggleMessage></ToggleMessage>
 
     <Special></Special>
   {/* the component is placed inside the suspense because there would be loading period since this data will come from a server side . for this loading period we are going to put a message toward the client side. the message should be written inside the fullback function */}
