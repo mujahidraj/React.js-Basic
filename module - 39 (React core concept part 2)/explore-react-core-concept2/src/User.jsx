@@ -1,4 +1,5 @@
 import { use } from "react";
+import UserInfo from "./UserInfo";
 
 
 export default function Users ({detailed}){
@@ -7,8 +8,8 @@ console.log(details);
 
     return (
         <div>
-            <h2>User Name: {details[1].name} </h2>
-            <h3>User Email : {details[1].email}</h3>
+            {details.map(users => <UserInfo key={users.id} users={users}></UserInfo>)}
+            
         </div>
     )
 }
