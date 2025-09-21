@@ -1,33 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  function handleClick (){
+    alert("Moizuddin Mohammad Mujahid Rashid")
+  }
+
+  const handleClick2 =()=> {
+    alert("status " + "true")
+  }
+
+  const handleWater = (num) => {
+    alert("Water level is " + num)
+  }
 
   return (
+
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+      
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* creating button  */}
+    <button onClick={handleClick}>
+      My Name
+    </button>
+
+    {/* creating fucntional button rules two */}
+    <button onClick={function handleAge(){
+      alert("25 yrs")
+    }}>My age</button>
+
+    {/* button using arrow function */}
+    <button onClick={handleClick2}> My status</button>
+
+    {/* arrow function inside the onclick */}
+    <button onClick={()=>alert("15k BDT")}>
+      My pocket Money
+    </button>
+
+    {/* calling function with a parameter  */}
+
+    <button onClick={()=>{handleWater(70)}}>
+      My Water level
+    </button>
+        
     </>
   )
 }
