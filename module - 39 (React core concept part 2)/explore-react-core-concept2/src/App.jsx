@@ -5,6 +5,7 @@ import Batsmen from './Batsmen'
 import SetCounter from './counter'
 import Users from './User'
 import Todos from './Todos'
+import Special from './useState'
 
 
 
@@ -25,6 +26,8 @@ function App() {
   const detailed = userDetails();
   const todo = TodoList();
 
+
+
   function handleClick (){
     alert("Moizuddin Mohammad Mujahid Rashid")
   }
@@ -40,6 +43,8 @@ function App() {
   return (
 
     <>
+
+    <Special></Special>
   {/* the component is placed inside the suspense because there would be loading period since this data will come from a server side . for this loading period we are going to put a message toward the client side. the message should be written inside the fullback function */}
     <Suspense fallback={<h1>Users are loading please wait for a while .....</h1>}>
       {/* user will get the data from the called variable . which is declared first with the detailed function which hold the api  */}
