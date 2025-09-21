@@ -1,9 +1,22 @@
+import { Suspense } from 'react'
 import './App.css'
 import Batsmen from './Batsmen'
 // we simply import the exported function from the counter.jsx file . and set a name called setCounter 
 import SetCounter from './counter'
+import Users from './User'
+
+
+
+// getting the data from the api 
+const userDetails = async() =>
+{
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  return res.json();
+}
 
 function App() {
+  // callign the function where the api is called 
+  const detailed = userDetails();
 
   function handleClick (){
     alert("Moizuddin Mohammad Mujahid Rashid")
@@ -20,6 +33,13 @@ function App() {
   return (
 
     <>
+  {/* the component is placed inside the suspense because there would be loading period since this data will come from a server side . for this loading period we are going to put a message toward the client side. the message should be written inside the fullback function */}
+    <Suspense fallback={<h1>Users are loading please wait for a while .....</h1>}>
+      {/* user will get the data from the called variable . which is declared first with the detailed function which hold the api  */}
+      <Users detailed = {detailed}></Users>
+    </Suspense>
+
+
     <Batsmen></Batsmen>
       <SetCounter></SetCounter>
       <h1>Vite + React</h1>
