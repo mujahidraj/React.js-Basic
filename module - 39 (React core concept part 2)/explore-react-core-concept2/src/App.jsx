@@ -7,25 +7,32 @@ import Users from './User'
 import Todos from './Todos'
 import Special from './useState'
 import ToggleMessage from './toggleTrue'
+import CompanyDetails from './company'
 
 
 
 // getting the data from the api 
-const userDetails = async() =>
-{
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  return res.json();
-}
+// const userDetails = async() =>
+// {
+//   const res = await fetch('https://jsonplaceholder.typicode.com/users');
+//   return res.json();
+// }
 
-const TodoList = async () =>{
-  const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+// const TodoList = async () =>{
+//   const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+//   return res.json();
+// }
+
+const company=async()=>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
   return res.json();
 }
 
 function App() {
   // callign the function where the api is called 
-  const detailed = userDetails();
-  const todo = TodoList();
+  // const detailed = userDetails();
+  // const todo = TodoList();
+  const companyDetails = company();
 
 
 
@@ -44,20 +51,22 @@ function App() {
   return (
 
     <>
+    <Suspense fallback={"Loading..."}>
+      <CompanyDetails companyDetail={companyDetails}></CompanyDetails>
+    </Suspense>
+    {/* <ToggleMessage></ToggleMessage> */}
 
-    <ToggleMessage></ToggleMessage>
-
-    <Special></Special>
+    {/* <Special></Special> */}
   {/* the component is placed inside the suspense because there would be loading period since this data will come from a server side . for this loading period we are going to put a message toward the client side. the message should be written inside the fullback function */}
-    <Suspense fallback={<h1>Users are loading please wait for a while .....</h1>}>
+    {/* <Suspense fallback={<h1>Users are loading please wait for a while .....</h1>}> */}
       {/* user will get the data from the called variable . which is declared first with the detailed function which hold the api  */}
-      <Users detailed = {detailed}></Users>
-    </Suspense>
+      {/* <Users detailed = {detailed}></Users> */}
+    {/* </Suspense> */}
 
 
-    <Suspense fallback={<h2>Todo List is wating ....</h2>}>
+    {/* <Suspense fallback={<h2>Todo List is wating ....</h2>}>
     <Todos list={todo}></Todos>
-    </Suspense>
+    </Suspense> */}
 
 
     <Batsmen></Batsmen>
