@@ -10,6 +10,8 @@ const Countries = ({ countriesFetch }) => {
 
     const handleVisitedCountries =(country)=>{
         console.log("hello world",country);
+        const newVisitedCountries = [...visitedCountries,country]
+        setVisitedCountries(newVisitedCountries)
         
     }
 
@@ -17,6 +19,8 @@ const Countries = ({ countriesFetch }) => {
     return (
         <div>
             <h2>Countries : {countries.length}</h2>
+            <h4>Visited country number : {visitedCountries.length}</h4>
+            <ol> {visitedCountries.map(list=><li>{list.name.common}</li>)}</ol>
             <div className='countries'>
                 {countries.map(country => <Country key={country.cca3} handleVisitedCountries={handleVisitedCountries} country={country}></Country>)}
             </div>
