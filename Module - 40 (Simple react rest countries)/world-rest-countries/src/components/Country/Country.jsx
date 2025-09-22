@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './country.css'
 
-const Country = ({country,handleVisitedCountries}) => {
+const Country = ({country,handleVisitedCountries,handleVisitedFlags}) => {
 
     const [visited , setVisited] = useState(false)
     
@@ -10,6 +10,7 @@ const Country = ({country,handleVisitedCountries}) => {
         
          setVisited(!visited);
          handleVisitedCountries(country);
+         
         
     }
     
@@ -25,6 +26,7 @@ const Country = ({country,handleVisitedCountries}) => {
                     visited ? "Visited"  : "Not Visited"
                 }
             </button>
+            <button onClick={()=>handleVisitedFlags(country.flags.png)}>Visited Flag</button>
         </div>
     );
 };
