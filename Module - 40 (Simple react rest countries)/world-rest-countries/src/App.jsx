@@ -1,11 +1,19 @@
+import { Suspense } from 'react';
 import './App.css'
+import Countries from './components/countries/countries'
+
+const countriesFetch = fetch ('https://restcountries.com/v3.1/independent?status=true')
+.then(res=>res.json());
+
+
 
 function App() {
   return (
     <>
-      
-      <h1>Hello World !</h1>
+    <Suspense fallback={<h3>Countries are loading...</h3>}>
+            <Countries countriesFetch={countriesFetch}></Countries>
 
+    </Suspense>
     </>
   )
 }
