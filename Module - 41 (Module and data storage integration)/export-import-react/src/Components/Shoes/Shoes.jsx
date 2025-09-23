@@ -1,7 +1,7 @@
 import React from 'react';
 import './Shoes.css'
 
-const Shoes = ({ list }) => {
+const Shoes = ({ list, handleAddToCart }) => {
     console.log(list);
 
     return (
@@ -9,12 +9,14 @@ const Shoes = ({ list }) => {
             <img src={list.image} alt="" />
             <h2>Brand : {list.brand}</h2>
             <h3>Model : {list.model}</h3>
-            <div>
-                <p>Price : ${list.price}</p>
-                {list.colors.map(colorList => <button>{colorList}</button>)}
-                {list.sizes.map(sizeList => <button>{sizeList}</button>)}
 
-            </div>
+            <p>Price : ${list.price}</p>
+            {list.colors.map(colorList => <button>{colorList}</button>)}
+            <br />
+            {list.sizes.map(sizeList => <button>{sizeList}</button>)}
+            <br />
+            <button onClick={()=>handleAddToCart(list)}>Buy Now</button>
+
         </div>
     );
 };
