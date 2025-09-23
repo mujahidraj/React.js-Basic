@@ -1,8 +1,8 @@
 import React from 'react';
 import './Shoes.css'
 
-const Shoes = ({ list, handleAddToCart }) => {
-    console.log(list);
+const Shoes = ({ list, handleAddToCart ,handleProduct}) => {
+    
 
     return (
         <div className='shoe-div'>
@@ -15,7 +15,10 @@ const Shoes = ({ list, handleAddToCart }) => {
             <br />
             {list.sizes.map(sizeList => <button>{sizeList}</button>)}
             <br />
-            <button onClick={()=>handleAddToCart(list)}>Buy Now</button>
+            <button onClick={()=>{
+                handleAddToCart(list)
+                handleProduct(list)
+            }}>Buy Now</button>
 
         </div>
     );
