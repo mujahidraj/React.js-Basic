@@ -1,0 +1,23 @@
+.main-div{
+    border: solid 1px gray;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.image-size {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.price-section {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.main-div-2{
+    background-color: darkblue;
+}
