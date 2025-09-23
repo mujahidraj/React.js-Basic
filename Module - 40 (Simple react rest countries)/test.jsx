@@ -1,0 +1,6 @@
+/*
+
+we can get the styling in the app.css and index.css . to first work we have to delete the prebuilt template . for this we have to edit the app.css and index.css where there is prebuilt style . so to do custom style we have to delete those .
+
+after that if want to use extension we can add the extension for the reactjs . 
+*/
