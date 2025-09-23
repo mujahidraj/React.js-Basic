@@ -1,7 +1,7 @@
 import React from 'react';
 import './Shoes.css'
 
-const Shoes = ({ list, handleAddToCart ,handleProduct}) => {
+const Shoes = ({ list, handleAddToCart}) => {
     
 
     return (
@@ -17,7 +17,6 @@ const Shoes = ({ list, handleAddToCart ,handleProduct}) => {
             <br />
             <button onClick={()=>{
                 handleAddToCart(list)
-                handleProduct(list)
             }}>Buy Now</button>
 
         </div>
