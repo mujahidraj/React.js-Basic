@@ -1,0 +1,4 @@
+1 . install npm,vite with tempate react
+2 . install tailwind with plugin
+3 . install daisy with plugin
+4 . font addition
