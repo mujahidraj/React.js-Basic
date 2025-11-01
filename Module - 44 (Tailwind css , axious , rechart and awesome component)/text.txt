@@ -2,3 +2,7 @@
 2 . install tailwind with plugin
 3 . install daisy with plugin
 4 . font addition
+5 . nav bar 
+6 . dynamic routing
+7 . navbar responsive
+8 . lucide react
