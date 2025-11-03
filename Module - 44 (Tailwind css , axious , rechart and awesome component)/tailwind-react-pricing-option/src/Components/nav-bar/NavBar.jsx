@@ -47,10 +47,17 @@ const NavBar = () => {
       <nav className='flex justify-between mx-10 items-center'>
 
         <span className='flex flex-row gap-5 justify-between items-center' onClick={() => setMenu(!menu)}>
+
           {
-            menu ? <IoClose className='md:hidden' ></IoClose>
+
+            menu ? <IoClose className='md:hidden'></IoClose>
               : <CiMenuBurger className='md:hidden' />
           }
+          <ul className='flex flex-col md:hidden'>
+          {
+            navItems.map(items => <li className="ml-6"><a href={items.path}>{items.name}</a></li>)
+          }
+        </ul>
           <h3>My NavBar</h3>
         </span>
 
