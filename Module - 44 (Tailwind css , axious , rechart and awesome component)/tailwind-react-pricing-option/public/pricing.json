@@ -1,0 +1,54 @@
+ [
+    {
+      "tier": "BASIC",
+      "tierIcon": "🥉",
+      "name": "Landing Page",
+      "description": "A stunning, 1-page website designed in Figma and built in React.",
+      "price": 250,
+      "currency": "USD",
+      "deliveryTimeInDays": 5,
+      "features": [
+        { "name": "UI/UX Design (Figma)", "included": true, "details": "1 Page" },
+        { "name": "Responsive Development", "included": true, "details": "" },
+        { "name": "No. of Pages", "included": true, "details": "1" },
+        { "name": "Source Code", "included": true, "details": "" },
+        { "name": "Database Integration", "included": false, "details": "" }
+      ],
+      "revisions": 3
+    },
+    {
+      "tier": "STANDARD",
+      "tierIcon": "🥈",
+      "name": "Multi-Page Site",
+      "description": "A complete, professional website for your business.",
+      "price": 600,
+      "currency": "USD",
+      "deliveryTimeInDays": 10,
+      "features": [
+        { "name": "UI/UX Design (Figma)", "included": true, "details": "Up to 5 Pages" },
+        { "name": "Responsive Development", "included": true, "details": "" },
+        { "name": "No. of Pages", "included": true, "details": "Up to 5" },
+        { "name": "Source Code", "included": true, "details": "" },
+        { "name": "Database Integration", "included": false, "details": "" }
+      ],
+      "revisions": 5
+    },
+    {
+      "tier": "PREMIUM",
+      "tierIcon": "🥇",
+      "name": "Full Web App",
+      "description": "A dynamic, full-stack web application with a backend.",
+      "price": 1500,
+      "priceNote": "Starts at $1,500+",
+      "currency": "USD",
+      "deliveryTimeInDays": 21,
+      "features": [
+        { "name": "UI/UX Design (Figma)", "included": true, "details": "Full Application Design" },
+        { "name": "Responsive Development", "included": true, "details": "" },
+        { "name": "No. of Pages", "included": true, "details": "Up to 10 + Backend" },
+        { "name": "Source Code", "included": true, "details": "" },
+        { "name": "Database Integration", "included": true, "details": "Node.js + MongoDB" }
+      ],
+      "revisions": 8
+    }
+  ]
