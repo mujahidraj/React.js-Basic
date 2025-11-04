@@ -44,18 +44,19 @@ const NavBar = () => {
 
   return (
     <div>
-      <nav className='flex justify-between mx-10 items-center'>
+      <nav className='flex  mx-10 justify-between items-start'>
 
-        <span className='flex flex-row gap-5 justify-between items-center' onClick={() => setMenu(!menu)}>
+        <span className='flex flex-row gap-5 justify-between ' onClick={() => setMenu(!menu)}>
 
           {
 
             menu ? <IoClose className='md:hidden'></IoClose>
               : <CiMenuBurger className='md:hidden' />
           }
-          <ul className='flex flex-col md:hidden'>
+          {/*  md:hidden */}
+          <ul className={`${menu ? "flex flex-col  top-8 absolute " : "hidden"}`}>
           {
-            navItems.map(items => <li className="ml-6"><a href={items.path}>{items.name}</a></li>)
+            navItems.map(items => <li className=" hover:bg-emerald-600 bg-slate-400 text-black pr-8 pl-2 text-left"><a href={items.path}>{items.name}</a></li>)
           }
         </ul>
           <h3>My NavBar</h3>
