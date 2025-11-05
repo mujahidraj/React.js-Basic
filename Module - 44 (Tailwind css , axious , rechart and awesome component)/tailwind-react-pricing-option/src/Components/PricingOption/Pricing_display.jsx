@@ -22,7 +22,7 @@ const Pricing_display = ({ items }) => {
 
 
       </div>
-          <button class="btn w-full bg-amber-700 px-2 py-2">Subscribe</button>
+          <button className="btn w-full bg-amber-700 px-2 py-2">Subscribe</button>
     </div>  
   );
 };

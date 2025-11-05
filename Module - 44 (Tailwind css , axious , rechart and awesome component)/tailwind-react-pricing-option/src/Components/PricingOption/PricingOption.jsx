@@ -8,7 +8,7 @@ const PricingOption = () => {
   useEffect(()=>{
     fetch('pricing.json').then(res=>res.json()).then(data=>setPackages(data))
   },[])
-   
+
   
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 mt-10 gap-10 mx-10'>
