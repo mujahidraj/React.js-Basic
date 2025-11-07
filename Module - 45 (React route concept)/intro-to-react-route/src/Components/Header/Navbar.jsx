@@ -18,6 +18,7 @@ const Navbar = () => {
       <NavLink to="MainContent2">Main Content 2</NavLink>
       <NavLink to="UserDetails">User Details</NavLink>
       <NavLink to="MoreUsers">More Details</NavLink>
+      <NavLink to="AllMembers">All Members</NavLink>
 
       <Outlet></Outlet>
     </div>
