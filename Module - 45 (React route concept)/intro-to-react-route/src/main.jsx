@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -8,7 +8,10 @@ import Navbar from './Components/Header/Navbar.jsx';
 import HomeContent from './Components/HomeContent/HomeContent.jsx';
 import MainContent from './Components/MainContent/MainContent.jsx';
 import MainContent2 from './Components/MainContent2/MainContent2.jsx';
+import UserDetails from './Components/Users/UserDetails.jsx';
+import MoreUsers from './Components/MoreUsers/MoreUsers.jsx';
 
+const userFetch  = fetch ("https://jsonplaceholder.typicode.com/users").then(res=>res.json())
 
 const router = createBrowserRouter([
   {
@@ -17,7 +20,17 @@ const router = createBrowserRouter([
     children :[
       {index:true , Component : HomeContent},
       {path : "MainContent" , Component : MainContent},
-      {path : "mainContent2", Component : MainContent2}
+      {path : "mainContent2", Component : MainContent2},
+      {path : "UserDetails",
+        loader: ()=> fetch ("https://jsonplaceholder.typicode.com/users").then(res=>res.json()),
+        Component: UserDetails
+
+      },
+      {path : "MoreUsers", 
+        element : <Suspense fallback={<h2>I am suspense</h2>}>
+          <MoreUsers userFetch={userFetch}></MoreUsers>
+        </Suspense>
+      }
     ]
    
   },
