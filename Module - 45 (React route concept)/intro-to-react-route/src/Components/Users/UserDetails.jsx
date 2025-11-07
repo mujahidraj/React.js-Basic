@@ -1,17 +1,18 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
+import SingleUser from '../SingleUser/SingleUser';
 
 const UserDetails = () => {
   const users = useLoaderData()
   
-  
-  console.log(users);
+
+   
   
   return (
     <div>
-      <h2>
-      
-      </h2>
+      {
+        users.map(single=><SingleUser single={single}></SingleUser>)
+      }
     </div>
   );
 };

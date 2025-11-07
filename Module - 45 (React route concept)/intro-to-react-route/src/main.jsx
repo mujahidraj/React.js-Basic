@@ -10,6 +10,8 @@ import MainContent from './Components/MainContent/MainContent.jsx';
 import MainContent2 from './Components/MainContent2/MainContent2.jsx';
 import UserDetails from './Components/Users/UserDetails.jsx';
 import MoreUsers from './Components/MoreUsers/MoreUsers.jsx';
+import Userdetails2 from './Components/Userdetails/Userdetails2.jsx';
+
 
 const userFetch  = fetch ("https://jsonplaceholder.typicode.com/users").then(res=>res.json())
 
@@ -30,6 +32,9 @@ const router = createBrowserRouter([
         element : <Suspense fallback={<h2>I am suspense</h2>}>
           <MoreUsers userFetch={userFetch}></MoreUsers>
         </Suspense>
+      },
+      {path  : "UserDetails/:userId",
+        Component : Userdetails2
       }
     ]
    
