@@ -3,13 +3,16 @@ import { useState } from "react";
 
 const ControlledForm = () => {
 
-  const [password , setPassword] = useState("")
+  const [formData , setFormData] = useState({
+    "email" : "",
+    "password" : ""
+  })
   const [error , setError] = useState("")
 
 
   const handleSubmit =(e)=>{
     e.preventDefault()
-    if(!password.toLocaleUpperCase){
+    if(!formData.toLocaleUpperCase){
       setError("Fuck man ! why no upper case.")
     }
     else {
@@ -20,8 +23,8 @@ const ControlledForm = () => {
 
   const handleFormOnChange =(e)=>{
     console.log(e.target.value);
-    setPassword(e.target.value)
-    if(password.length <=8){
+    setFormData(e.target.value)
+    if(formData.length <=8){
       setError("Who the hell are you? write the 8 length password.")
     }
     else{
@@ -35,7 +38,7 @@ const ControlledForm = () => {
       <form onSubmit={handleSubmit}>
         <input type="email" name="email" placeholder="Your Email" required />
         <br />
-        <input type="password" name="password" onChange={handleFormOnChange} defaultValue={password} placeholder="Your Password" required />
+        <input type="password" name="password" onChange={handleFormOnChange} defaultValue={formData.password} placeholder="Your Password" required />
         <br />
         <input type="submit" value="Submit" />
       </form>
