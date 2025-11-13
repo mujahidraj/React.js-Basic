@@ -18,13 +18,15 @@ const ProductForm = ({handleProduct}) => {
 
       if(name.length<=0){
         setError("Please enter a valid product name.")
-      
+      return
       }
       else if(price<0){
         setError("Price cant be negative.")
+        return
       }
       else if(price<=0){
         setError("please enter a valid price")
+        return
       }
       else if(quantity<=0){
         setError('please enter a qunaitity at least.')
