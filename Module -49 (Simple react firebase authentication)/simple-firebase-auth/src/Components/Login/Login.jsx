@@ -38,6 +38,7 @@ const Login = () => {
     signInWithPopup (auth , githubProvider).then ( result =>{
       const user = result.user;
       setUser (user)
+      
     })
     .catch ( error =>{
       console.error ("error:", error);
