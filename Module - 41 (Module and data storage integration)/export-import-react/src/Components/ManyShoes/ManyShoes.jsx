@@ -1,6 +1,7 @@
 import React, { use, useState } from 'react';
 import Shoes from '../Shoes/Shoes';
 import './ManyShoes.css';
+import { addToStoreCart } from '../../utils/localStorage';
 
 const ManyShoes = ({ fetchShoe }) => {
 
@@ -17,10 +18,14 @@ const ManyShoes = ({ fetchShoe }) => {
         setCart(newCart)
         console.log(list);
         
-        
+        addToStoreCart(list.id)
         
 
     }
+
+    
+
+
 
     return (
         <div>
