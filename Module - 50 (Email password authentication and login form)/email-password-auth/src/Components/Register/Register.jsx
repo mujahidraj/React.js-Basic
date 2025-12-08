@@ -121,6 +121,7 @@ const Register = () => {
       {
         errorMsg && <p className='text-red-700'>{errorMsg.split("/")}</p>
       }
+      <p>Already have an account? please <a href="/login" className="text-blue-600">Login</a></p>
     </div>
   );
 };
