@@ -1,18 +1,27 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { auth } from '../../firebase.init';
+import { FaRegEyeSlash } from "react-icons/fa6";
+
+
 
 
 
 const Register = () => {
 
   const [errorMsg, setErrorMsg] = useState(' ');
+  const [passwordShow, setPasswordShow] = useState(false);
+
+  const handleOnClick = () => {
+    setPasswordShow(!passwordShow)
+  }
 
   const handleSubmit = e => {
     e.preventDefault()
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, "and", password);
+    const terms = e.target.terms.checked;
+    console.log(email, "and", password , "and ", terms);
 
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,32}$/;
 
@@ -21,8 +30,13 @@ const Register = () => {
       return;
     }
 
+    if(terms !== true){
+      setErrorMsg('You must accept the terms and conditions to register.');
+      return;
+    }
 
-    createUserWithEmailAndPassword(auth, email, password)
+
+    createUserWithEmailAndPassword(auth, email, password , terms)
       .then(result => {
         console.log(result);
         setErrorMsg(' ')
@@ -75,22 +89,34 @@ const Register = () => {
               <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle>
             </g>
           </svg>
-          <input
-            type="password"
-            name='password'
-            required
-            placeholder="Password"
-            minlength="8"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
-          />
+          <div>
+            <input
+              type={passwordShow ? "text" : "password"}
+              name='password'
+              required
+              placeholder="Password"
+              minlength="8"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+            />
+            
+            <button className='btn w-3 h-9 top-0 right-0 absolute' type='button' onClick={handleOnClick}>
+              eye
+            </button>
+          </div>
         </label>
         <p className="validator-hint hidden">
           Must be more than 8 characters, including
           <br />At least one number <br />At least one lowercase letter <br />At least one uppercase letter
         </p>
         <br />
-        <button className="btn btn-primary" type="submit">Register</button>
+        <br />
+            <label className="label">
+              <input type="checkbox" name='terms' className="checkbox" />
+              Accept Terms and Conditions
+            </label>
+            <br />
+        <input type="submit" value="Register" className='btn ' />
       </form>
       {
         errorMsg && <p className='text-red-700'>{errorMsg.split("/")}</p>
