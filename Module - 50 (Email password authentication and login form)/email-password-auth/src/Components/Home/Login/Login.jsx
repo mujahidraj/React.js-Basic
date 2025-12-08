@@ -1,5 +1,5 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import React, { useState } from 'react';
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useRef, useState } from 'react';
 import { auth } from '../../../firebase.init';
 import { Link } from 'react-router';
 
@@ -7,9 +7,11 @@ const Login = () => {
 
   const [errorMessage , setErrorMessage] = useState("");
 
+  const emailRef = useRef();
+
   const handleLogin =e=>{
     e.preventDefault();
-    const email = e.target.email.value;
+    const email = emailRef.current.value;
     const password = e.target.password.value;
     console.log(email , "and" , password)
 
@@ -25,6 +27,15 @@ const Login = () => {
 
   }
 
+  const handleForgetPassword =()=>{
+    const email = emailRef.current.value;
+    sendPasswordResetEmail(auth,email).then(()=>{
+      console.log("Password reset email sent");
+    }).catch(error=>{
+      console.log(error.code)
+    })
+  }
+
 
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -37,10 +48,10 @@ const Login = () => {
       <div className="card-body">
         <form onSubmit={handleLogin}>
           <label className="label">Email</label>
-          <input type="email" className="input" name='email' placeholder="Email" />
+          <input type="email" className="input" ref={emailRef} name='email' placeholder="Email" />
           <label className="label">Password</label>
           <input type="password" className="input" name='password' placeholder="Password" />
-          <div><a className="link link-hover">Forgot password?</a></div>
+          <div onClick={handleForgetPassword}><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4" type='submit'>Login</button>
         </form>
         {
