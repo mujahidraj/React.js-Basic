@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../Utilities/firebase.init';
 
 const AuthProvider = ({children}) => {
+
+  const [user , setUser] = useState(null)
 
   const createUser = (email , password)=>{
     return createUserWithEmailAndPassword(auth , email , password)
@@ -13,18 +15,27 @@ const AuthProvider = ({children}) => {
     return signInWithEmailAndPassword(auth,email,password)
   }
 
- onAuthStateChanged(auth ,(currentUser)=>{
-    if(currentUser){
-      console.log("Application has user :" , currentUser);
+
+  useEffect(()=>{
+    const unSubscribe = onAuthStateChanged(auth , currentUser =>{
+      setUser(currentUser)
+      
+    })
+    return ()=>{
+      unSubscribe();
     }
-    else{
-      console.log("Application doesn't haev current user :" );
-    }
-  })
+  },[])
+
+  const signOutUser =()=>{
+    return signOut(auth)
+  }
+
 
   const userInto = {
+    user,
     createUser,
-    loginUser
+    loginUser,
+    signOutUser
 
   }
 

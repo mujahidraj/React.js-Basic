@@ -4,7 +4,12 @@ import { AuthContext } from '../../Context/AuthContext';
 
 const Login = () => {
 
-  const {loginUser} = use (AuthContext)
+  const {loginUser , user} = use (AuthContext)
+
+  
+  console.log(user);
+  
+  
 
   const handleOnSubmit = (e)=>{
     e.preventDefault();
@@ -40,6 +45,7 @@ const Login = () => {
           <button className="btn btn-neutral mt-4">Login</button>
         </form>
         <p>Don't have an account? <Link className='text-blue-600 underline' to="/register">Register Here...</Link></p>
+        {/* <p>{user}</p> */}
       </div>
     </div>
   </div>
