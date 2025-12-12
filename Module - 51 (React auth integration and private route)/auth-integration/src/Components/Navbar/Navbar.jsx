@@ -52,6 +52,8 @@ const Navbar = () => {
             {
               user && <li><NavLink to="/orders" className={({ isActive }) => isActive ? "bg-blue-300" : ""}>Orders</NavLink></li>
             }
+
+            <li><NavLink to="/dashboard" className={({ isActive }) => isActive ? "bg-blue-300" : ""}>Dashboard</NavLink></li>
         </ul>
       </div>
       <div className="navbar-end">
